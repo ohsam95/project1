@@ -47,7 +47,7 @@ public class Join extends JFrame{
 		getContentPane().add(cont1);
 		
 		JLabel lblPwd = new JLabel("PWD");
-		lblPwd.setBounds(36, 156, 76, 27);
+		lblPwd.setBounds(36, 156, 76, 27); 	
 		getContentPane().add(lblPwd);
 		
 		JLabel cont2 = new JLabel("PWD \uD655\uC778");

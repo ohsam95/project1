@@ -112,7 +112,7 @@ public class Check extends JFrame implements ItemListener{
 		getContentPane().add(btnnext);
 		
 	
-		JLabel hihi = new JLabel("æ»≥Á«œººø‰! " + PollSession.id +" ¥‘");
+		JLabel hihi = new JLabel("æ»≥Á«œººø‰! " + PollSession.id + " ¥‘");
 		hihi.setHorizontalAlignment(JLabel.CENTER);
 		hihi.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 16));
 		hihi.setBounds(12, 74, 460, 33);
@@ -133,7 +133,12 @@ public class Check extends JFrame implements ItemListener{
 	
 	public void itemStateChanged(ItemEvent e) {
 		temp = (JCheckBox) e.getItem();
+		
+		if(e.getStateChange()==1) {
 		checkArr.add(temp.getText());
+		}else {
+		checkArr.remove(temp.getText());
+		}
 //		System.out.println(temp.getText());
 //		System.out.println(e.getStateChange());
 //		System.out.println(checkArr);

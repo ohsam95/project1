@@ -29,7 +29,7 @@ public class Login extends JFrame {
 		
 		JLabel lbtitle = new JLabel("\uCCB4\uD06C\uCE74\uB4DC \uCD94\uCC9C \uC571");
 		lbtitle.setHorizontalAlignment(JLabel.CENTER);
-		lbtitle.setBounds(0, 0, 334, 36);
+		lbtitle.setBounds(0, 10, 334, 41);
 		lbtitle.setVerticalAlignment(SwingConstants.TOP);
 		lbtitle.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 26));
 		getContentPane().add(lbtitle);
@@ -84,13 +84,13 @@ public class Login extends JFrame {
 			}
 		});
 		
+		
 		btnenter.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LogChk LC = new LogChk();
 				LC.loginCheck(jf, tfid.getText(), tfpwd.getText());
-				pp();
-			
+				pp(); 
 				} 
 		});
 		
