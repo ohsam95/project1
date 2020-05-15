@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResultModle {
-	private String cardname;
+public class ResultModle2 {
+	private String cardname2;
 }

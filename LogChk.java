@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 
 import javax.swing.JFrame;
 
+import project02.gui.Check;
+import project02.gui.Login;
+
 public class LogChk {
 
 	public class logC {
@@ -48,6 +51,7 @@ public class LogChk {
 			new Check();
 		} else {
 			mb.messageBox(jf.getContentPane(), "로그인 실패");
+			new Login();
 		}
 
 	}

@@ -11,7 +11,7 @@ import java.util.List;
 public class ResultCard {
 	public static void cardname() {
 		try {
-			String SQL3 = "select cardname from (select c.cardname, count(c.num) r from checkcard c , cardbenefit b , usercheck u where u.benefit = b.benefit and u.id = '"+ PollSession.id + "' and c.num = b.checkcardnum group by c.cardname order by r DESC) where rownum = 1";
+			String SQL3 = "select cardname from (select c.cardname, count(c.num) r from checkcard c , cardbenefit b , usercheck u where u.benefit = b.benefit and u.id = '"+ PollSession.id + "' and c.num = b.checkcardnum group by c.cardname order by r DESC) where rownum = 1" ;
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection conn3 = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "myproject", "myproject");
 			PreparedStatement pstmt2 = conn3.prepareStatement(SQL3);
@@ -24,21 +24,21 @@ public class ResultCard {
 						rs.getString("cardname")
 						);
 				resultModle.add(rm);
-				CardM cm = new CardM();
-				cm.CName = rm.getCardname(); 
+				CardM.CName = rm.getCardname(); 
 			}
 				 
-				for (ResultModle rm : resultModle) {
+//				for (ResultModle rm : resultModle) {
 //					System.out.println(rm.getCardname());
-				}
+//				}
 //				System.out.println("¿Ï·á");
 				
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
 	}
-
+}
+	
 		
-	}
+	
 	
 

@@ -1,4 +1,4 @@
-package project02;
+package project02.gui;
 
 import java.awt.Container;
 import java.awt.Font;
@@ -13,6 +13,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import project02.LogChk;
+import project02.PollSession;
+import project02.Test;
+
 public class Login extends JFrame {
 	
 	private JFrame jf;
@@ -22,10 +26,10 @@ public class Login extends JFrame {
 	public Login() {
 		
 		jf = this;
+		setTitle("부산은행 체크카드 추천_로그인");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 		Container c = getContentPane();
-		setLocationRelativeTo(null);
 		
 		JLabel lbtitle = new JLabel("\uCCB4\uD06C\uCE74\uB4DC \uCD94\uCC9C \uC571");
 		lbtitle.setHorizontalAlignment(JLabel.CENTER);
@@ -89,10 +93,14 @@ public class Login extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				LogChk LC = new LogChk();
-				LC.loginCheck(jf, tfid.getText(), tfpwd.getText());
 				pp(); 
+				LC.loginCheck(jf, tfid.getText(), tfpwd.getText());
+				//Test.named = tfid.getText();
+				
+				dispose();
 				} 
 		});
+		
 		
 		setSize(350,400);
 		setVisible(true);
@@ -100,13 +108,10 @@ public class Login extends JFrame {
 		
 	}
 	public void pp() {
-	PollSession ps = new PollSession();
-	ps.id = tfid.getText();
+	PollSession.id = tfid.getText();
 	}
 	
 	
-	public static void main(String[] args) {
-		new Login();
-	}
+	
 	}
 

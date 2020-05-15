@@ -1,4 +1,4 @@
-package project02;
+package project02.gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import javax.swing.JTextField;
 
 import oracle.jdbc.driver.Message;
+import project02.MsgeBox;
 
 import javax.management.Query;
 import javax.swing.JButton;
@@ -31,11 +32,11 @@ public class Join extends JFrame{
 	public Join() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
+		setTitle("부산은행 체크카드 추천_회원가입");
 		Container c = getContentPane();
 		setTitle("\uCCB4\uD06C\uCE74\uB4DC \uCD94\uCC9C \uD68C\uC6D0\uAC00\uC785");
 		getContentPane().setLayout(null);
-		setLocationRelativeTo(null);
+
 		
 		JLabel lbjoin = new JLabel("\uD68C\uC6D0\uAC00\uC785");
 		lbjoin.setFont(new Font("맑은 고딕", Font.BOLD, 20));
@@ -115,7 +116,7 @@ public class Join extends JFrame{
 					pstmt.executeUpdate();
 					MsgeBox mb = new MsgeBox();
 					mb.messageBox(c, "가입이 완료되었습니다.");
-					
+					dispose();
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

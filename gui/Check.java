@@ -1,4 +1,4 @@
-package project02;
+package project02.gui;
 
 import java.awt.Container;
 import java.awt.Font;
@@ -16,21 +16,28 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.xml.ws.Holder;
+
+import project02.MsgeBox;
+import project02.PollSession;
+import project02.ResultCard;
+import project02.ResultCard2;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class Check extends JFrame implements ItemListener{
 	
 	List<String> checkArr;
 	Check checkFrame = this;
+	JLabel hihi;
 	
 	public Check() {
-
-
+		
 		setTitle("∫ŒªÍ¿∫«‡ √º≈©ƒ´µÂ √ﬂ√µ");
 		Container c = getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
-		setLocationRelativeTo(null);
-		
+	
 		
 		JLabel home = new JLabel("\uBD80\uC0B0\uC740\uD589 \uCCB4\uD06C\uCE74\uB4DC \uD61C\uD0DD");
 		home.setHorizontalAlignment(JLabel.CENTER);
@@ -95,6 +102,26 @@ public class Check extends JFrame implements ItemListener{
 		cbfa.setBounds(237, 242, 210, 41);
 		getContentPane().add(cbfa);
 		
+		JCheckBox cbyuk = new JCheckBox("\uC721\uC544/\uAD50\uC721 \uD61C\uD0DD");
+		cbyuk.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 12));
+		cbyuk.setBounds(39, 414, 132, 41);
+		getContentPane().add(cbyuk);
+		
+		JCheckBox cbhang = new JCheckBox("\uD56D\uACF5\uB9C8\uC77C\uB9AC\uC9C0\uC801\uB9BD \uD61C\uD0DD");
+		cbhang.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 12));
+		cbhang.setBounds(237, 414, 162, 41);
+		getContentPane().add(cbhang);
+		
+		JCheckBox cbcash = new JCheckBox("\uAD6D\uB0B4/\uD574\uC678 \uCE90\uC2DC\uBC31 \uD61C\uD0DD");
+		cbcash.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 12));
+		cbcash.setBounds(39, 459, 162, 41);
+		getContentPane().add(cbcash);
+		
+		JCheckBox cbgan = new JCheckBox("\uAC04\uD3B8\uACB0\uC81C \uD560\uC778 \uD61C\uD0DD");
+		cbgan.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 12));
+		cbgan.setBounds(237, 457, 150, 41);
+		getContentPane().add(cbgan);
+		
 		cbgyo.addItemListener(this);
 		cbdo.addItemListener(this);
 		cbtong.addItemListener(this);
@@ -105,23 +132,35 @@ public class Check extends JFrame implements ItemListener{
 		cbyoung.addItemListener(this);
 		cbole.addItemListener(this);
 		cbfa.addItemListener(this);
-		
+		cbyuk.addItemListener(this);
+		cbhang.addItemListener(this);
+		cbcash.addItemListener(this);
+		cbgan.addItemListener(this);
 		
 		JButton btnnext = new JButton("\uACB0\uACFC \uBCF4\uAE30");
-		btnnext.setBounds(173, 479, 125, 41);
+		btnnext.setBounds(174, 538, 125, 41);
 		getContentPane().add(btnnext);
 		
-	
-		JLabel hihi = new JLabel("æ»≥Á«œººø‰! " + PollSession.id + " ¥‘");
+		
+		hihi = new JLabel("æ»≥Á«œººø‰! " + PollSession.id + "¥‘");
 		hihi.setHorizontalAlignment(JLabel.CENTER);
 		hihi.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 16));
 		hihi.setBounds(12, 74, 460, 33);
 		getContentPane().add(hihi);
+		
+		JLabel smalltitle_1 = new JLabel("\u203B \uCD5C\uC18C 2\uAC1C \uC774\uC0C1 \uC120\uD0DD\uD574\uC8FC\uC138\uC694!");
+		smalltitle_1.setForeground(Color.RED);
+		smalltitle_1.setHorizontalAlignment(SwingConstants.CENTER);
+		smalltitle_1.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.PLAIN, 10));
+		smalltitle_1.setBounds(0, 507, 472, 21);
+		getContentPane().add(smalltitle_1);
+		
+		
 	
 		
 		btnnext.addMouseListener(new next());
 		
-		setSize(488,600);
+		setSize(488,640);
 		setVisible(true);
 		checkArr = new ArrayList<>();
 	}
@@ -160,11 +199,14 @@ public class Check extends JFrame implements ItemListener{
 					}
 					mb.messageBox(checkFrame.getContentPane(), "¿·Ω√∏∏ ±‚¥Ÿ∑¡¡÷ººø‰!");
 					ResultCard.cardname();
+					ResultCard2.cardname2();
 					new Result();
+					dispose();
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}
+			
 			@Override
 			public void mousePressed(MouseEvent e) {	
 			}
@@ -178,5 +220,4 @@ public class Check extends JFrame implements ItemListener{
 			public void mouseExited(MouseEvent e) {	
 			}
 	}
-	
 }
